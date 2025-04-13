@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivroJS - 1-11c</title>
+</head>
+<body>
+    <script>
+        // Elabore um programa para uma loja, o qual leia o preço de um produto e informe as opções de pagamento da loja. Calcule e informe o valor para pagamento a vista com 10% de desconto e o valor em 3x.
+        let valorProduto = prompt("Qual o valor do produto: ")
+        let desconto = valorProduto * 0.1
+        alert(`A vista com 10% de desconto: ${(valorProduto - desconto).toFixed(2)} R$\nParcelado em 3x de: ${(valorProduto / 3).toFixed(2)} R$`)
+    </script>
+</body>
+</html>
