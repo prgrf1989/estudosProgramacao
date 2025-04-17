@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso do Split</title>
+</head>
+<body>
+    <div>
+        Nome Completo: <input type="text" id="inName">
+        <button id="btn">Enviar</button>
+        <p id="out"></p>
+    </div>
+
+    <script>
+        let inName = document.getElementById("inName")
+        let btn = document.querySelector('#btn')
+        let out = document.getElementById("out")
+
+        function mostrar(){
+            let nomeCompleto = inName.value
+            let primeiroNome = nomeCompleto.split(" ")
+            out.textContent = `Olá ${primeiroNome[0]}, tudo bem?`
+        }
+
+        btn.addEventListener("click", mostrar)
+
+    </script>
+</body>
+</html>

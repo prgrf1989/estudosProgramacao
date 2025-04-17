@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVENDA DE VEICULOS</title>
+</head>
+<body>
+    <!--
+        Elabore um programa para uma revenda de veiculos. O programa deve ler modelo e preço do veiculo. Apresentar como resposta o valor da entrada (50%) e o saldo em 12x
+    -->
+    <div>
+        <h1>
+            REVENDA DE VEICULOS
+        </h1><hr>
+        Modelo do Veículo: <input type="text" id="inVeiculo">
+        Valor do Carro: <input type="text" id="inValor">
+        <button id="btn">Calcular</button>
+        <p id="outResult"></p>
+    </div>
+
+    <script>
+        let inVeiculo = document.getElementById("inVeiculo")
+        let inValor = document.getElementById("inValor")
+        let btn = document.getElementById("btn")
+        let outResult = document.getElementById("outResult")
+
+        function calcularParcelaCarro(){
+            let valorEntrada = inValor.value / 2
+            let valorParcela = valorEntrada / 12
+
+            outResult.textContent = `O valor do veículo ${inVeiculo.value.toUpperCase()} ficou entrada de 50% no valor de ${valorEntrada.toFixed(2)} e 12 parcelas de ${valorParcela.toFixed(2)}`
+        }
+
+        btn.addEventListener("click", calcularParcelaCarro)
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAURANTE</title>
+</head>
+<body>
+    <!--
+        Elabore um programa para um restaurante que leia o preço por kg e o consumo (em gramas) de um cliente. Exiba o valor a se pago.
+    -->
+    <div>
+        <h1>
+            RESTAURANTE
+        </h1><hr>
+        Preço por kg: <input type="text" id="inPrecoKg">
+        Consumo (g): <input type="text" id="inConsumo">
+        <button id="btn">Calcular</button>
+        <p id="outResult"></p>
+    </div>
+
+    <script>
+        let inPrecoKg = document.getElementById("inPrecoKg")
+        let inConsumo = document.getElementById("inConsumo")
+        let btn = document.getElementById("btn")
+        let outResult = document.getElementById("outResult")
+
+        function calcularRefeicao(){
+            let valorAPagar = (inPrecoKg.value / 1000) * inConsumo.value
+            outResult.textContent = `O valor da refeição ficou ${valorAPagar.toFixed(2)} R$`
+        }
+
+        btn.addEventListener("click", calcularRefeicao)
+    </script>
+</body>
+</html>

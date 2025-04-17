@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Locadora</title>
+</head>
+<body>
+    <!--ELaborar um programa para um video locadora, que leia o titulo e a duração de um filme em minutos. Exiba o titulo do filme e conversa a duração para horas e minutos-->
+
+    <div>
+        <h1>
+            VIDEO LOCADORA
+        </h1><hr>
+        Nome do filme: <input type="text" id="inNameFilm">
+        Duração em minutos: <input type="text" id="inDuration">
+        <button id="btn">Converter</button>
+        <p id="outResult"></p>
+    </div>
+
+    <script>
+        let inNameFilm = document.getElementById("inNameFilm")
+        let inDuration = document.getElementById("inDuration")
+        let btn = document.getElementById("btn")
+        let outResult = document.getElementById("outResult")
+
+        function calcularTempoDoFilme(){
+            let tempoEmHoras = Math.trunc(Number(inDuration.value) / 60)
+            let tempoEmMinutos = Number(inDuration.value) - (tempoEmHoras * 60)
+
+            if(tempoEmMinutos > 0){
+                outResult.textContent = `O Filme ${inNameFilm.value.toUpperCase()} tem duração de ${tempoEmHoras} horas e ${tempoEmMinutos} minutos`
+            } else {
+                outResult.textContent = `O Filme ${inNameFilm.value.toUpperCase()} tem duração de ${tempoEmHoras} horas`
+            }
+        }
+
+        btn.addEventListener("click", calcularTempoDoFilme)
+    </script>
+</body>
+</html>

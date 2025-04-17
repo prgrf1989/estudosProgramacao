@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LivroJS - 2 - 1a</title>
+    <title>Document</title>
 </head>
 <body>
     <div>
-        <h1>Programa Olá você!</h1>
-        Nome: <input id="texto" type="text">
-        <button onclick="mostrar()">Mostrar</button>
-        <p id="resposta"></p>
+        <h1>Mostrar Olá!</h1>
+        Digite seu nome: <input type="text" id="nome">
+        <button id="botao">Mostrar</button>
+        <p id="mostrarAqui"></p>
     </div>
 
     <script>
-        let nome = document.querySelector("#texto")
-        
-        function mostrar(){
-            document.querySelector('#resposta').textContent = "Olá " + nome.value
-        }
+            function mostrarOla(){
+                let nome = document.querySelector("#nome")
+                document.querySelector("#mostrarAqui").textContent = "Olá " + nome.value
+            }
+            let botao = document.querySelector("#botao")
+            // Através dos Listeners é possível executar funções nos elementos HTML.
+            botao.addEventListener('click', mostrarOla)
+
     </script>
 </body>
 </html>
