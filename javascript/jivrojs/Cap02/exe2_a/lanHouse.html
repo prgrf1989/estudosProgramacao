@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAN HOUSE DO AEROPORTO</title>
+</head>
+<body>
+    <!--
+        O programa deve ler o valor de cada 15 minutos de uso de um computador e o tempo de uso por um cliente em minutos. Informe o valor a ser pago pelo cliente, sabendo que as frações extras de 15 minutos devem ser cobradas de forma integral.
+    -->
+    <div>
+        <h1>
+            LAN HOUSE DO AEROPORTO
+        </h1><hr>
+        Valor de 15 minutos: <input type="text" id="inValor">
+        Tempo de uso do cliente (em minutos): <input type="text" id="inUso">
+        <button id="btn">Calcular</button>
+        <p id="outResult"></p>
+    </div>
+
+    <script>
+        let inValor = document.getElementById("inValor")
+        let inUso = document.getElementById("inUso")
+        let btn = document.getElementById("btn")
+        let outResult = document.getElementById("outResult")
+
+        function calcularHora(){
+            let tempoAPagar = Math.ceil(inUso.value / 15)
+            let valorAPagar = tempoAPagar * inValor.value
+
+            outResult.textContent = `O valor a pagar é: ${valorAPagar.toFixed(2)} R$`
+        }
+
+        btn.addEventListener("click", calcularHora)
+    </script>
+</body>
+</html>

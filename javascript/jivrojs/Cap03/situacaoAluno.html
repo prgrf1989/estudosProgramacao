@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        input{
+            display: block;
+            margin: 15px 5px;
+        }
+    </style>
+    <title>SITUACAO MEDIA ALUNO</title>
+</head>
+<body>
+    <div>
+        <h1>
+            PROGRAMA SITUACAO DO ALUNO
+        </h1><hr>
+        Nome do Aluno: <input type="text" id="inNome">
+        1º Nota: <input type="text" id="inNota01">
+        2º Nota: <input type="text" id="inNota02">
+        <button id="btn">Exibir Média e Situação</button>
+        <p id="outResult"></p>
+    </div>
+
+    <script>
+        let inNome = document.getElementById("inNome")
+        let inNota01 = document.getElementById("inNota01")
+        let inNota02 = document.getElementById("inNota02")
+        let btn = document.getElementById("btn")
+        let outResult = document.getElementById("outResult")
+
+        function calcularMedia(){
+            let mediaAluno = (Number(inNota01.value)+Number(inNota02.value))/2
+            outResult.textContent = `Média do Aluno ${mediaAluno.toFixed(1)}`
+
+            if (mediaAluno >= 7){
+                outResult.innerHTML += `<br>Parabéns ${inNome.value.toUpperCase()}! Você foi aprovado.`
+                outResult.style.color = "blue"
+            } else if (mediaAluno >= 4 || mediaAluno < 7){
+                outResult.innerHTML += `<br>Cuidado ${inNome.value.toUpperCase()}! Você está em recuperação.`
+                outResult.style.color = "orange"
+            } else {
+                outResult.innerHTML += `<br>Sinto muito ${inNome.value.toUpperCase()}! Você reprovou.`
+                outResult.style.color = "red"
+            }
+        }
+
+        btn.addEventListener("click", calcularMedia)
+    </script>
+</body>
+</html>

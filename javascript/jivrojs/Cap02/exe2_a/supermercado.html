@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPERMERCADO</title>
+</head>
+<body>
+    <!--Para aumentar suas vendas no setor de higiene, cada etiqueta de produto deve exibir uma mensagem anunciando 50% de desconto (para um item) na compra de três unidades do produto. Elabore um programa que leia descrição e preço de um produto. Após, apresente as mensagens indicando a promoção.-->
+
+    <div>
+        <h1>
+            SUPERMERCADO
+        </h1>
+        Nome do produto: <input type="text" id="inProduto">
+        Preço do produto: <input type="text" id="inValor">
+        <button id="btn">Calcular</button>
+        <p id="outResult"></p>
+    </div>
+
+    <script>
+        let inProduto = document.getElementById("inProduto")
+        let inPreco = document.getElementById("inValor")
+        let btn = document.getElementById("btn")
+        let outResult = document.getElementById("outResult")
+
+        function calcularDesconto(){
+            let desconto = Number(inPreco.value / 2)
+            let valorFinal = desconto + Number(inPreco.value * 2)
+            outResult.textContent = `${inProduto.value.toUpperCase()} - Promoção, leve 3 e pague ${valorFinal.toFixed(2)} R$. Com um desconto de ${desconto.toFixed(2)} R$`
+        }
+        btn.addEventListener("click", calcularDesconto)
+        
+    </script>
+</body>
+</html>
